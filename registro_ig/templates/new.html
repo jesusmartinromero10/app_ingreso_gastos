@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% block pageContent %}
+    <h1>Alta Ingresos-Gastos</h1>
+    <form action="/nuevo" method="post">
+        <label for="date">Fecha</label>
+        <input type="date" name="date" id="date" >
+
+        <label for="concept">Concepto: </label>
+        <input type="text" name="concept" id="concept">
+
+        <label for="quantity">Cantidad</label>
+        <input type="number" name="quantity" id="quantity" placeholder="Introduce ingreso o gasto" step="0.01">
+
+        <input type="submit" value="Aceptar">
+
+    </form>
+    <a href="/">Volver</a>
+{% endblock %}

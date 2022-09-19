@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+
+{% block pageContent %}    
+        <h1>Listado de Ingresos-Gastos</h1>
+        <h2>Un simulacro de contabilidad</h2>
+
+        
+        <table>
+            <thead>
+                <tr>
+                    <th>Fecha</th>
+                    <th>Concepto</th>
+                    <th>Cantidad</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for registro in moviments %}
+                <tr>
+                    <td>{{ registro[0] }}</td>
+                    <td>{{ registro[1] }}</td>
+                    <td>{{ registro[2] }} €</td>
+                </tr>
+                {% endfor %}
+                
+            </tbody>
+        </table>  
+        <a href="/nuevo">Añadir</a><!--es lo mismo que si ponemos http://localhost5001/-->
+{% endblock %}
