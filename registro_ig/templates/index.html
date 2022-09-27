@@ -8,17 +8,24 @@
         <table>
             <thead>
                 <tr>
+                    
                     <th>Fecha</th>
                     <th>Concepto</th>
                     <th>Cantidad</th>
+                    <th>Accion</th>
                 </tr>
             </thead>
             <tbody>
                 {% for registro in moviments %}
                 <tr>
-                    <td>{{ registro[0] }}</td>
-                    <td>{{ registro[1] }}</td>
-                    <td>{{ registro[2] }} €</td>
+                    
+                    <td>{{ registro[1] }}</td><!--fecha-->
+                    <td>{{ registro[2] }}</td><!--concepto-->
+                    <td>{{ registro[3] }} €</td><!--cantidad-->
+                    <td>
+                        <a href="/borrar/{{ registro[0] }}">Borrar</a>
+                        <a href="/modificar/{{ registro[0] }}">Modificar</a>
+                    </td>
                 </tr>
                 {% endfor %}
                 

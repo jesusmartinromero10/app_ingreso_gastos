@@ -1,9 +1,30 @@
-
 {% extends "base.html" %}
-{% block pageContent %}
 
-    <h1>Modificación de Ingresos-Gastos</h1>
-    <p>En construcción modificación de datos</p>
-    <a href="/">Volver</a>
+{% block pageContent %} 
 
-{% endblock %}
+
+<h1>Modificar Ingresos-Gastos</h1>
+    <form action="/modificar/{{ registro[0] }}" method="post">
+        <label for="date">Fecha</label>
+        <input type="date" name="date" id="date" value = "{{ registro[1] }}" required>
+
+        <label for="concept">Concepto: </label>
+        <input type="text" name="concept" id="concept" value = "{{ registro[2] }}">
+
+        <label for="quantity">Cantidad</label>
+        <input type="number" name="quantity" id="quantity" placeholder="Introduce ingreso o gasto" step="0.01" value = "{{ registro[3] }}">
+        <br><br>
+        <input type="submit" value="Modificar">
+   
+    <p> 
+        <a href="/"> Volver</a> 
+    </p> 
+    <article class="errores">
+        <ul>
+            {% for error in msgErrors %}
+            <li>{{ error }}</li>
+            {% endfor %}
+        </ul>
+    </article>
+{% endblock %} 
+
